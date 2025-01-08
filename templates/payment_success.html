@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Diatla Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .success-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        .order-details {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+        }
+        .email-status {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+            display: none;
+            text-align: center;
+        }
+        .email-status.success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .email-status.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .order-items {
+            margin-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1rem;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .item-quantity {
+            color: #6b7280;
+            margin-right: 0.5rem;
+        }
+        .total-amount {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e5e7eb;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .notification-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #e0f2fe;
+            border-radius: 8px;
+            color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="success-icon">✓</div>
+                <h2 class="mb-3">Thank You for Your Order!</h2>
+                <p class="lead mb-4">Your payment has been processed successfully.</p>
+                
+                <div class="order-details">
+                    <h4 class="mb-3">Order Summary</h4>
+                    <div class="mb-3">
+                        <strong>Order #{{ order_number }}</strong><br>
+                        <small class="text-muted">{{ current_time.strftime('%B %d, %Y %I:%M %p') }}</small>
+                    </div>
+                    
+                    <div class="order-items">
+                        <div id="itemsList">
+                            <!-- Order items will be populated by JavaScript -->
+                        </div>
+                        <div class="total-amount d-flex justify-content-between">
+                            <span>Total Amount:</span>
+                            <span>R{{ "%.2f"|format(amount) }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="notification-info">
+                    <p class="mb-2">📧 Order confirmation will be sent to:</p>
+                    <strong>{{ customer_email }}</strong>
+                </div>
+                
+                <div id="emailStatus" class="email-status mt-3"></div>
+                
+                <div class="mt-4">
+                    <p>Your order is being prepared and will be ready for collection soon.</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Return to Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Store order details for email
+        const orderDetails = {{ order_details|safe }};
+        
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("owgR7S5oWy9TqEah8");
+            console.log('EmailJS initialized');
+            
+            // Populate order items
+            const itemsList = document.getElementById('itemsList');
+            if (orderDetails && orderDetails.items) {
+                orderDetails.items.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'order-item';
+                    itemDiv.innerHTML = `
+                        <div>
+                            <span class="item-quantity">${item.quantity}x</span>
+                            <span>${item.name}</span>
+                        </div>
+                        <div>R${(item.price * item.quantity).toFixed(2)}</div>
+                    `;
+                    itemsList.appendChild(itemDiv);
+                });
+            }
+        })();
+
+        // Function to send order confirmation email
+        async function sendOrderConfirmationEmail() {
+            const emailStatus = document.getElementById('emailStatus');
+            
+            try {
+                // Format order items
+                const orderItemsText = orderDetails.items.map(item => 
+                    `${item.quantity}x ${item.name}\n   R${(item.price * item.quantity).toFixed(2)}`
+                ).join('\n\n');
+
+                const templateParams = {
+                    to_email: "{{ customer_email }}",
+                    from_name: 'Diatla Restaurant & Bar',
+                    to_name: orderDetails.customerName || "{{ customer_email }}".split('@')[0],
+                    order_number: "{{ order_number }}",
+                    order_date: "{{ current_time.strftime('%B %d, %Y %I:%M %p') }}",
+                    order_details: orderItemsText,
+                    total_amount: `R{{ "%.2f"|format(amount) }}`,
+                    payment_method: 'Card',
+                    special_instructions: 'Payment completed via card. Please show your order number when collecting.'
+                };
+
+                console.log('Sending email with params:', templateParams);
+
+                const response = await emailjs.send(
+                    'service_aniftmg',  // Your EmailJS service ID
+                    'template_xeqd3gi', // Your EmailJS template ID
+                    templateParams
+                );
+
+                console.log('Email sent successfully:', response);
+                emailStatus.textContent = '✉️ Order confirmation email sent successfully!';
+                emailStatus.classList.add('success');
+                emailStatus.style.display = 'block';
+
+            } catch (error) {
+                console.error('Failed to send email:', error);
+                emailStatus.textContent = '❌ Could not send confirmation email. Please check your email address.';
+                emailStatus.classList.add('error');
+                emailStatus.style.display = 'block';
+            }
+        }
+
+        // Send email when page loads
+        window.onload = function() {
+            sendOrderConfirmationEmail();
+        };
+    </script>
+</body>
+</html>

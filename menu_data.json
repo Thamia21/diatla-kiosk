@@ -1,0 +1,112 @@
+{
+    "burgers": [
+        {"name": "Beef Burger", "price": 70.00, "description": "Served with chips", 
+         "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format"},
+        {"name": "Cheese Burger", "price": 75.00, "description": "Served with chips",
+         "image_url": "https://images.unsplash.com/photo-1615297928064-24977384d0da?w=500&auto=format"},
+        {"name": "Chicken Burger", "price": 70.00, "description": "Served with chips",
+         "image_url": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=500&auto=format"},
+        {"name": "Fish Burger", "price": 65.00, "description": "Served with chips",
+         "image_url": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=500&auto=format"},
+        {"name": "Rib Burger", "price": 90.00, "description": "Served with chips",
+         "image_url": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500&auto=format"},
+        {"name": "Diatla Kota", "price": 55.00, "description": "Served with chips",
+         "image_url": "https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=500&auto=format"}
+    ],
+    "chicken": [
+        {"name": "Chicken Wings 4pc", "price": 50.00, "description": "Served with chips/salad & pap (lemon/herb/peri)",
+         "image_url": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&auto=format"},
+        {"name": "Chicken Wings 6pc", "price": 70.00, "description": "Served with chips/salad & pap (lemon/herb/peri)",
+         "image_url": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&auto=format"},
+        {"name": "Chicken Wings 12pc", "price": 120.00, "description": "Served with chips/salad & pap (lemon/herb/peri)",
+         "image_url": "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&auto=format"},
+        {"name": "Hot Chicken", "price": 85.00, "description": "lemon&herb/peri-peri",
+         "image_url": "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=500&auto=format"},
+        {"name": "Full Chicken", "price": 110.00, "description": "lemon&herb/peri-peri",
+         "image_url": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=500&auto=format"},
+        {"name": "Chicken & chips", "price": 70.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&auto=format"}
+    ],
+    "grills": [
+        {"name": "T-Bone Steak", "price": 140.00, "description": "Served with chips or salad (200g)",
+         "image_url": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=500&auto=format"},
+        {"name": "Pork Chops", "price": 130.00, "description": "Served with chips or salad (200g)",
+         "image_url": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=500&auto=format"},
+        {"name": "Wings", "price": 95.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&auto=format"},
+        {"name": "Tripe", "price": 75.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format"}
+    ],
+    "african_cuisine": [
+        {"name": "Mogodu", "price": 70.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=500&auto=format"},
+        {"name": "Beef Stew", "price": 70.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=500&auto=format"},
+        {"name": "Kwere-Kwere", "price": 60.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&auto=format"},
+        {"name": "Dikoko", "price": 65.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=500&auto=format"},
+        {"name": "Cowfeet(mogwathakgomo)", "price": 70.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format"}
+    ],
+    "combos": [
+        {"name": "Diatla 1", "price": 150.00, "description": "200g steak + 200g wings + chips/pap",
+         "image_url": "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format"},
+        {"name": "Diatla 2", "price": 170.00, "description": "300g steak + 200g wings + chips/pap",
+         "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&auto=format"},
+        {"name": "Diatla 3", "price": 190.00, "description": "400g steak + 200g wings + chips/pap",
+         "image_url": "https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=500&auto=format"},
+        {"name": "Diatla 4", "price": 200.00, "description": "500g steak + 200g wings + chips/pap",
+         "image_url": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&auto=format"}
+    ],
+    "salads": [
+        {"name": "Chicken Salad", "price": 65.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format"}
+    ],
+    "milkshakes": [
+        {"name": "Vanilla", "price": 30.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1568901839119-631418a3910d?w=500&auto=format"},
+        {"name": "Choc", "price": 30.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format"},
+        {"name": "Banana", "price": 30.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1553787499-6f5f32820cc9?w=500&auto=format"},
+        {"name": "Bubblegum", "price": 30.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1586917049334-0c77a8f1c417?w=500&auto=format"},
+        {"name": "Strawberry", "price": 30.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format"}
+    ],
+    "hot_drinks": [
+        {"name": "Cappuccino", "price": 20.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format"},
+        {"name": "Cafe Mocca", "price": 24.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format"},
+        {"name": "Hot Chocolate", "price": 25.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=500&auto=format"},
+        {"name": "Tea", "price": 16.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&auto=format"}
+    ],
+    "beverages": [
+        {"name": "Orange Juice", "price": 25.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&auto=format"},
+        {"name": "Mango Juice", "price": 25.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&auto=format"},
+        {"name": "Tropical Juice", "price": 25.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=500&auto=format"},
+        {"name": "Soda", "price": 20.00, "description": "330ml",
+         "image_url": "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=500&auto=format"},
+        {"name": "Water", "price": 15.00, "description": "500ml",
+         "image_url": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&auto=format"},
+        {"name": "Ice Tea", "price": 20.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&auto=format"},
+        {"name": "Passion Fruit & Lemonade", "price": 25.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&auto=format"}
+    ],
+    "desserts": [
+        {"name": "Ice Cream", "price": 35.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format"},
+        {"name": "Cake", "price": 40.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format"},
+        {"name": "Malva Pudding", "price": 45.00, "description": "",
+         "image_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format"}
+    ]
+}
