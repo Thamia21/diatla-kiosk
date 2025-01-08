@@ -1,31 +1,52 @@
-# Diatla Restaurant & Bar - Digital Kiosk System
+# Diatla Restaurant & Bar - Digital Kiosk System 🍽️
 
-A modern, user-friendly digital kiosk system for Diatla Restaurant & Bar that allows customers to browse the menu and place orders efficiently.
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/flask-2.0+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Features
+A modern, user-friendly digital kiosk system for Diatla Restaurant & Bar that allows customers to browse the menu and place orders efficiently. Built with Flask and modern web technologies.
 
-- Interactive menu browsing by category
-- Real-time order management
-- Dynamic price calculation
-- Responsive design for various screen sizes
-- Automated email confirmation system
-- Secure payment processing with Stripe
-- Professional order confirmation emails
+![Kiosk Demo](static/img/demo.gif)
 
-## Installation
+## ✨ Features
 
-1. Make sure you have Python 3.8+ installed
-2. Install the required dependencies:
+- 🎯 Interactive menu browsing by category
+- ⚡ Real-time order management
+- 💰 Dynamic price calculation
+- 📱 Responsive design for various screen sizes
+- 📧 Automated email confirmation system
+- 🔒 Secure payment processing with Stripe
+- 📨 Professional order confirmation emails
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- pip package manager
+- Stripe account for payments
+- EmailJS account for notifications
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Thamia21/diatla-kiosk.git
+   cd diatla-kiosk
    ```
+
+2. Install dependencies
+   ```bash
    pip install -r requirements.txt
    ```
-3. Set up environment variables:
-   ```
+
+3. Set up environment variables
+   ```bash
    STRIPE_SECRET_KEY=your_stripe_secret_key
    STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
    ```
 
-## Email Configuration
+## 📧 Email Configuration
 
 The system uses EmailJS for sending order confirmation emails:
 
@@ -39,39 +60,54 @@ The system uses EmailJS for sending order confirmation emails:
    template_id: 'your_template_id'
    ```
 
-## Running the Application
+## 🏃‍♂️ Running the Application
 
-1. Navigate to the project directory:
-   ```
-   cd diatla-kiosk
-   ```
-
-2. Start the Flask server:
-   ```
+1. Start the Flask server:
+   ```bash
    python app.py
    ```
 
-3. Open your web browser and visit:
+2. Open your web browser and visit:
    ```
    http://localhost:5000
    ```
 
-## Project Structure
+## 🏗️ Project Structure
 
-- `app.py` - Main Flask application and backend logic
-- `templates/` - HTML templates
-  - `index.html` - Main kiosk interface
-- `static/` - Static assets
-  - `css/style.css` - Custom styling
-  - `js/main.js` - Frontend functionality
-  - `img/` - Menu item images
+```
+diatla-kiosk/
+├── app.py              # Main Flask application
+├── auth.py             # Authentication logic
+├── models.py           # Database models
+├── templates/          # HTML templates
+│   ├── index.html     # Main kiosk interface
+│   ├── admin/         # Admin panel templates
+│   └── email/         # Email templates
+├── static/            # Static assets
+│   ├── css/          # Stylesheets
+│   ├── js/           # JavaScript files
+│   └── img/          # Images
+└── utils/            # Utility functions
+```
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-- Backend: Python/Flask
-- Frontend: HTML5, CSS3, JavaScript
-- UI Framework: Bootstrap 5
-- Payment Processing: Stripe
-- Email Service: EmailJS
-- Database: SQLite
-- Icons: Bootstrap Icons
+- **Backend**: Python/Flask
+- **Frontend**: HTML5, CSS3, JavaScript
+- **UI Framework**: Bootstrap 5
+- **Payment**: Stripe
+- **Email**: EmailJS
+- **Database**: SQLite
+- **Icons**: Bootstrap Icons
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+If you have any questions or need support, please email at [your-email@example.com]
