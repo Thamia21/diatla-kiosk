@@ -42,8 +42,13 @@ A modern, user-friendly digital kiosk system for Diatla Restaurant & Bar that al
 
 3. Set up environment variables
    ```bash
-   STRIPE_SECRET_KEY=your_stripe_secret_key
-   STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env with your actual values:
+   # - Generate a secure SECRET_KEY
+   # - Add your Stripe API keys from dashboard.stripe.com
+   # - Configure other environment variables as needed
    ```
 
 ## 📧 Email Configuration
